@@ -1,0 +1,33 @@
+version: "3.1"
+
+intents:
+  - make single request
+  - make context request
+  - clear requests history
+  - out_of_scope
+  - greet
+  - goodbye
+  - affirm
+  - deny
+
+responses:
+  utter_greet:
+  - text: "Привет! Чем тебе помочь?"
+
+  utter_confirm_action:
+  - text: "Вы уверены что хотите удалить историю сообщений?"
+
+  utter_input_request_text:
+  - text: "Введите текст запроса"
+
+  utter_goodbye:
+  - text: "Bye"
+
+actions:
+  - action_delete_requests_history
+  - action_make_single_request
+  - action_make_context_request
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

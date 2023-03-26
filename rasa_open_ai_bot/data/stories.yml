@@ -1,0 +1,24 @@
+version: "3.1"
+
+stories:
+
+- story: clear context
+  steps:
+  - intent: clear requests history
+  - action: utter_confirm_action
+  - intent: affirm
+  - action: action_delete_requests_history
+
+- story: make single request
+  steps:
+  - intent: make single request
+  - action: utter_input_request_text
+  - intent: out_of_scope
+  - action: action_make_single_request
+
+- story: make context request
+  steps:
+  - intent: make context request
+  - action: utter_input_request_text
+  - intent: out_of_scope
+  - action: action_make_context_request
